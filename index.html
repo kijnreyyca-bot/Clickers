@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10141c">
+  <meta name="description" content="Choose a clicker game to play.">
+  <title>Clickers Arcade</title>
+  <style>
+    :root{color-scheme:dark;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;background:#10141c;color:#f2f5fa}
+    *{box-sizing:border-box}
+    body{min-height:100vh;margin:0;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 0,#25314b 0,transparent 58%),#10141c}
+    main{width:min(900px,100%);padding:clamp(24px,6vw,54px);border:1px solid #ffffff1b;border-radius:24px;background:#141a24d9;box-shadow:0 28px 90px #0007;backdrop-filter:blur(18px)}
+    .eyebrow{font-size:11px;font-weight:750;letter-spacing:.18em;text-transform:uppercase;color:#a9c8ff}
+    h1{margin:10px 0 8px;font-size:clamp(34px,7vw,56px);line-height:1.05;letter-spacing:-.05em}
+    .intro{margin:0;color:#aab4c4}
+    .games{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:14px;margin-top:32px}
+    .game{display:flex;min-height:190px;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:22px;border:1px solid #ffffff1b;border-radius:17px;background:linear-gradient(145deg,#202b3d,#171d28);color:inherit;text-decoration:none;transition:transform .18s,border-color .18s,background .18s}
+    .game:hover,.game:focus-visible{transform:translateY(-3px);border-color:#8db5ff88;background:linear-gradient(145deg,#293850,#1a2230);outline:none}
+    .game small{color:#aab4c4;font-size:12px}
+    .game strong{display:block;margin-top:8px;font-size:23px;letter-spacing:-.03em}
+    .launch{color:#a9c8ff;font-size:13px;font-weight:700}
+    footer{margin-top:24px;color:#788394;font-size:12px}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">Clickers Arcade</div>
+    <h1>Pick your game</h1>
+    <p class="intro">Two clicker worlds. Choose one to launch.</p>
+    <nav class="games" aria-label="Clicker games">
+      <a class="game" href="./spacebar/">
+        <span><small>Tap, upgrade, repeat</small><strong>Spacebar Clicker</strong></span>
+        <span class="launch">Play game ↗</span>
+      </a>
+      <a class="game" href="./cookieclicker-2.052/">
+        <span><small>Cookie Clicker · Version 2.052</small><strong>Cookie Clicker</strong></span>
+        <span class="launch">Play game ↗</span>
+      </a>
+    </nav>
+    <footer>Games open in their own pages. Your browser saves game progress locally.</footer>
+  </main>
+</body>
+</html>
