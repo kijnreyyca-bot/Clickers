@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d13">
+  <meta name="description" content="Build a self-sufficient nation on the neon frontier.">
+  <title>Neon Frontier — Nation Builder</title>
+  <style>
+    :root{color-scheme:dark;--bg:#090d13;--panel:#0f151e;--panel2:#121a24;--line:#24313d;--muted:#8493a2;--text:#e7eef3;--cyan:#59e1ce;--lime:#c1f279;--amber:#ffc66d;--red:#ff7784;--violet:#ad9cff;font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--bg);color:var(--text)}button{font:inherit;color:inherit}button:focus-visible,a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}.shell{min-height:100vh;display:grid;grid-template-columns:252px minmax(0,1fr)}
+    .sidebar{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:24px 16px;border-right:1px solid var(--line);background:#0c1118}.brand{display:flex;align-items:center;gap:11px;padding:0 9px 25px;border-bottom:1px solid var(--line)}.brand-mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid #59e1ce55;background:#59e1ce12;color:var(--cyan);font-size:19px}.brand-name{font-weight:800;letter-spacing:.04em}.brand-sub{display:block;margin-top:1px;color:var(--muted);font-size:10px;letter-spacing:.17em;text-transform:uppercase}.side-label{padding:23px 10px 9px;color:#617181;font-size:10px;font-weight:750;letter-spacing:.16em;text-transform:uppercase}.nav{display:grid;gap:5px}.nav button{display:flex;align-items:center;gap:11px;width:100%;padding:10px;border:1px solid transparent;background:transparent;color:#9ba8b5;text-align:left;cursor:pointer}.nav button:hover,.nav button.active{border-color:#59e1ce2b;background:#59e1ce0d;color:var(--cyan)}.nav-icon{width:18px;text-align:center;font-size:15px}.side-spacer{flex:1}.side-card{padding:13px;border:1px solid var(--line);background:var(--panel)}.side-card-head{display:flex;justify-content:space-between;color:#9ba8b5;font-size:11px}.status-dot{width:7px;height:7px;margin-top:5px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px #c1f27988}.progress{height:4px;margin-top:11px;background:#222e39}.progress i{display:block;height:100%;width:0;background:var(--cyan);transition:width .3s}.side-foot{padding:13px 9px 0;color:#657484;font-size:10px}
+    .main{min-width:0;padding:27px clamp(18px,3vw,42px) 50px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:20px;border-bottom:1px solid var(--line)}.eyebrow{color:var(--cyan);font-size:10px;font-weight:750;letter-spacing:.18em;text-transform:uppercase}.top-title{margin:3px 0 0;font-size:20px;letter-spacing:-.03em}.top-actions{display:flex;align-items:center;gap:8px}.top-actions button,.utility button{padding:8px 11px;border:1px solid var(--line);background:var(--panel);color:#a8b5c0;cursor:pointer}.top-actions button:hover,.utility button:hover{border-color:#546575;color:var(--text)}.save-state{color:#758594;font-size:10px}.mobile-brand{display:none}.welcome{display:flex;justify-content:space-between;align-items:end;gap:18px;padding:25px 0 17px}.welcome h2{margin:5px 0 3px;font-size:clamp(23px,3vw,31px);letter-spacing:-.045em}.welcome p{margin:0;color:var(--muted);font-size:12px}.season{padding:7px 10px;border:1px solid #ffc66d38;background:#ffc66d0b;color:var(--amber);font-size:10px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}.metric{min-width:0;padding:14px;border:1px solid var(--line);background:var(--panel);position:relative;overflow:hidden}.metric:after{content:"";position:absolute;inset:auto -20px -36px auto;width:76px;height:76px;border:1px solid #ffffff08;transform:rotate(35deg)}.metric-label{display:flex;align-items:center;gap:7px;color:#91a0ad;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.metric-value{margin-top:7px;font-size:clamp(20px,2.6vw,27px);font-weight:750;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.metric-sub{margin-top:2px;color:#657584;font-size:10px}.gold{color:var(--amber)}.energy{color:var(--cyan)}.pop{color:var(--lime)}.power{color:var(--violet)}
+    .dashboard{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.9fr);gap:14px;margin-top:14px;align-items:start}.panel{border:1px solid var(--line);background:var(--panel)}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}.panel-title{margin:0;font-size:12px;font-weight:750;letter-spacing:.08em;text-transform:uppercase}.panel-kicker{color:#738291;font-size:10px}.command{position:relative;overflow:hidden;min-height:240px;padding:25px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:radial-gradient(ellipse at 50% 83%,#59e1ce0c,transparent 48%),var(--panel)}.command:before,.command:after{content:"";position:absolute;pointer-events:none;border:1px solid #59e1ce0b;border-radius:50%;width:250px;height:250px}.command:after{width:360px;height:360px}.command-label{color:#9cabb7;font-size:10px;letter-spacing:.18em;text-transform:uppercase}.gather{position:relative;z-index:1;margin:14px 0 9px;padding:15px 24px;border:1px solid #59e1ce88;background:#59e1ce12;color:var(--cyan);font-weight:800;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:transform .12s,background .15s,border-color .15s}.gather:hover{transform:translateY(-2px);background:#59e1ce20;border-color:var(--cyan)}.gather:active{transform:scale(.97)}.gather-icon{margin-right:9px}.command-hint{color:#7d8b98;font-size:10px}.rate-row{position:relative;z-index:1;display:flex;gap:15px;margin-top:18px;color:#8493a2;font-size:10px}.rate-row strong{color:var(--text);font-weight:650}.divider{color:#34414c}
+    .intel{display:grid;gap:10px;padding:14px}.intel-row{display:flex;gap:11px;align-items:flex-start}.intel-icon{width:28px;height:28px;display:grid;place-items:center;flex:none;border:1px solid var(--line);background:#ffffff04;color:var(--cyan)}.intel-copy strong{display:block;font-size:11px}.intel-copy span{display:block;margin-top:2px;color:#7d8b98;font-size:10px;line-height:1.45}.intel-copy .green{color:var(--lime)}.intel-copy .yellow{color:var(--amber)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:25px 0 12px}.section-head h2{margin:0;font-size:14px;letter-spacing:.02em}.section-head p{margin:3px 0 0;color:#768593;font-size:10px}.filters{display:flex;gap:5px}.filters button{padding:5px 9px;border:1px solid transparent;background:transparent;color:#7f8c99;font-size:10px;cursor:pointer}.filters button.active,.filters button:hover{border-color:#59e1ce33;background:#59e1ce0c;color:var(--cyan)}.upgrade-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.upgrade{position:relative;min-width:0;display:grid;grid-template-columns:37px minmax(0,1fr) auto;gap:11px;align-items:center;padding:12px;border:1px solid var(--line);background:var(--panel);transition:border-color .15s,background .15s}.upgrade:hover{border-color:#415362;background:#111923}.upgrade.locked{opacity:.54}.upgrade-icon{width:37px;height:37px;display:grid;place-items:center;border:1px solid #ffffff0e;background:#ffffff04;font-size:17px}.upgrade-name{font-size:11px;font-weight:700}.upgrade-desc{margin-top:3px;color:#788795;font-size:9px;line-height:1.45}.upgrade-owned{margin-top:4px;color:#617383;font-size:9px}.buy{min-width:82px;padding:8px;border:1px solid #59e1ce4d;background:#59e1ce0d;color:var(--cyan);font-size:10px;font-weight:700;cursor:pointer}.buy:hover:not(:disabled){background:#59e1ce1c;border-color:var(--cyan)}.buy:disabled{border-color:#27333e;background:#ffffff03;color:#586775;cursor:not-allowed}.buy small{display:block;margin-top:2px;color:#8b9aa5;font-size:9px;font-weight:500}.empty{grid-column:1/-1;padding:22px;border:1px dashed #283642;color:#778593;text-align:center;font-size:11px}
+    .bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}.log{display:grid;gap:0;padding:2px 15px 8px}.log-item{display:grid;grid-template-columns:64px 1fr;gap:9px;padding:9px 0;border-bottom:1px solid #1d2832;color:#93a0ac;font-size:10px}.log-item:last-child{border-bottom:0}.log-time{color:#586977}.log-item.event{color:var(--amber)}.utility{display:flex;flex-wrap:wrap;gap:7px;padding:13px}.utility button{font-size:10px}.utility button.danger{color:#ff8d96}.utility-note{padding:0 13px 12px;color:#657381;font-size:9px}.float{position:fixed;z-index:9;pointer-events:none;animation:floatup .9s ease-out forwards;font-weight:800;font-size:14px;text-shadow:0 2px 9px #000}.float.good{color:var(--cyan)}.float.goldfloat{color:var(--amber)}@keyframes floatup{0%{opacity:0;transform:translate(-50%,8px) scale(.85)}15%{opacity:1}100%{opacity:0;transform:translate(-50%,-56px) scale(1.08)}}
+    dialog{width:min(490px,calc(100% - 28px));padding:0;border:1px solid #3b4c58;background:#0e151d;color:var(--text);box-shadow:0 24px 90px #000b}dialog::backdrop{background:#03070bd9;backdrop-filter:blur(4px)}.event-top{padding:19px 21px;border-bottom:1px solid var(--line)}.event-tag{color:var(--amber);font-size:9px;font-weight:750;letter-spacing:.18em;text-transform:uppercase}.event-top h2{margin:6px 0 0;font-size:21px;letter-spacing:-.03em}.event-body{padding:17px 21px;color:#aab5be;font-size:12px;line-height:1.7}.event-choices{display:grid;gap:8px;padding:0 21px 21px}.choice{padding:11px 13px;border:1px solid var(--line);background:#ffffff04;text-align:left;cursor:pointer}.choice:hover{border-color:#ffc66d77;background:#ffc66d0a}.choice strong{display:block;color:var(--text);font-size:11px}.choice span{display:block;margin-top:3px;color:#83919e;font-size:10px}.event-close{float:right;border:1px solid var(--line);padding:5px 9px;background:transparent;color:#9aa7b2;cursor:pointer}
+    .toast{position:fixed;right:20px;bottom:20px;z-index:12;max-width:min(360px,calc(100vw - 40px));padding:11px 14px;border:1px solid #3a4b57;background:#111a23;color:var(--text);font-size:11px;box-shadow:0 10px 35px #0008;animation:toastin .2s ease-out}@keyframes toastin{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}
+    @media(max-width:980px){.shell{grid-template-columns:205px minmax(0,1fr)}.dashboard{grid-template-columns:1fr}.command{min-height:220px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:620px){.shell{display:block}.sidebar{position:sticky;z-index:5;top:0;width:100%;height:auto;padding:0 13px;border-right:0;border-bottom:1px solid var(--line)}.brand{height:55px;padding:0;border:0}.brand-mark{width:29px;height:29px}.side-label,.side-card,.side-spacer,.side-foot{display:none}.nav{display:flex;gap:3px;overflow:auto;padding:0 0 8px;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav button{width:auto;flex:none;gap:6px;padding:6px 9px;font-size:10px;white-space:nowrap}.nav-icon{width:auto}.main{padding:16px 13px 35px}.topbar{padding-bottom:13px}.top-title{font-size:17px}.save-state{display:none}.top-actions button{padding:7px 8px;font-size:10px}.welcome{padding:18px 0 13px;align-items:start}.welcome h2{font-size:24px}.season{font-size:8px;padding:5px 7px}.metric{padding:11px}.metric-value{font-size:22px}.dashboard{gap:10px;margin-top:10px}.command{min-height:210px;padding:18px}.upgrade-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.filters{max-width:100%;overflow:auto}.bottom-grid{grid-template-columns:1fr;gap:10px}.panel-head{padding:12px 13px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Game navigation">
+      <div class="brand"><div class="brand-mark" aria-hidden="true">⌘</div><div class="brand-name">NEON FRONTIER<span class="brand-sub">National command</span></div></div>
+      <div class="side-label">Command</div>
+      <nav class="nav" aria-label="Game sections">
+        <button class="active" type="button" data-filter="all"><span class="nav-icon">◈</span>Overview</button>
+        <button type="button" data-filter="economic"><span class="nav-icon">▤</span>Economy</button>
+        <button type="button" data-filter="military"><span class="nav-icon">⬡</span>Territory</button>
+        <button type="button" data-filter="research"><span class="nav-icon">⌬</span>Research</button>
+      </nav>
+      <div class="side-label">National status</div>
+      <div class="side-card"><div class="side-card-head"><span>Frontier stability</span><span id="stability-label">Stable</span></div><div class="progress"><i id="stability-bar"></i></div></div>
+      <div class="side-spacer"></div>
+      <div class="side-foot">SECTOR 07 · EARTH, YEAR 2149<br>Build carefully. The frontier remembers.</div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><div class="eyebrow">National operations</div><h1 class="top-title">Command center</h1></div><div class="top-actions"><span class="save-state" id="save-status" aria-live="polite">Autosave ready</span><button type="button" id="save-button">Save</button></div></header>
+      <section class="welcome"><div><div class="eyebrow">Frontier settlement · Sector 07</div><h2>Good day, Commander.</h2><p>Turn a small outpost into a thriving independent nation.</p></div><div class="season">◷ &nbsp; Cycle <span id="cycle">1</span></div></section>
+      <section class="metrics" aria-label="National metrics">
+        <article class="metric"><div class="metric-label"><span>◉</span> Treasury</div><div id="gold-value" class="metric-value gold">0</div><div class="metric-sub"><span id="gold-rate">+0</span> credits / second</div></article>
+        <article class="metric"><div class="metric-label"><span>ϟ</span> Energy</div><div id="energy-value" class="metric-value energy">0</div><div class="metric-sub"><span id="energy-rate">+0</span> charge per second</div></article>
+        <article class="metric"><div class="metric-label"><span>◌</span> Population</div><div id="population-value" class="metric-value pop">0</div><div class="metric-sub">Citizens in the federation</div></article>
+        <article class="metric"><div class="metric-label"><span>⌖</span> Power index</div><div id="power-value" class="metric-value power">0</div><div class="metric-sub">Defense and influence</div></article>
+      </section>
+      <section class="dashboard">
+        <article class="panel"><div class="panel-head"><h2 class="panel-title">Field operations</h2><span class="panel-kicker">Manual collection</span></div>
+          <div class="command"><div class="command-label">Your people are ready to work</div><button class="gather" id="gather-button" type="button"><span class="gather-icon">ϟ</span>Gather resources</button><div class="command-hint">Tap or press <kbd>Space</kbd> · yields credits and energy</div><div class="rate-row"><span>Click yield <strong id="click-gold">+1 credit</strong></span><span class="divider">/</span><span><strong id="click-energy">+1 charge</strong></span></div></div>
+        </article>
+        <article class="panel"><div class="panel-head"><h2 class="panel-title">Situation report</h2><span class="panel-kicker" id="report-clock">Live</span></div><div class="intel">
+          <div class="intel-row"><div class="intel-icon">⌖</div><div class="intel-copy"><strong>Territorial reach</strong><span id="territory-report">Your settlement holds 100 km² of frontier.</span></div></div>
+          <div class="intel-row"><div class="intel-icon">⌬</div><div class="intel-copy"><strong>Research division</strong><span id="research-report">0 points banked · +0 points per second</span></div></div>
+          <div class="intel-row"><div class="intel-icon">◈</div><div class="intel-copy"><strong>National outlook</strong><span id="outlook-report" class="green">The frontier is quiet. A good time to invest.</span></div></div>
+        </div></article>
+      </section>
+      <section aria-labelledby="upgrade-heading">
+        <div class="section-head"><div><h2 id="upgrade-heading">Development projects</h2><p>Invest in infrastructure to grow your nation. Costs rise with each purchase.</p></div><div class="filters" aria-label="Filter projects"><button class="active" data-filter="all" type="button">All</button><button data-filter="economic" type="button">Economic</button><button data-filter="military" type="button">Territory</button><button data-filter="research" type="button">Research</button></div></div>
+        <div class="upgrade-grid" id="upgrade-grid" aria-live="polite"></div>
+      </section>
+      <section class="bottom-grid">
+        <article class="panel"><div class="panel-head"><h2 class="panel-title">Dispatch log</h2><span class="panel-kicker">Latest reports</span></div><div class="log" id="event-log" aria-live="polite"></div></article>
+        <article class="panel"><div class="panel-head"><h2 class="panel-title">Game settings</h2><span class="panel-kicker">Local save data</span></div><div class="utility"><button type="button" id="load-button">Load save</button><button type="button" id="reset-button" class="danger">Reset progress</button></div><div class="utility-note">Progress saves in this browser automatically every 10 seconds. Offline production is credited for up to 4 hours.</div></article>
+      </section>
+    </main>
+  </div>
+  <dialog id="event-dialog" aria-labelledby="event-title"><div class="event-top"><button class="event-close" type="button" id="event-dismiss" aria-label="Dismiss event">×</button><div class="event-tag">Incoming situation · Decision required</div><h2 id="event-title"></h2></div><div class="event-body" id="event-description"></div><div class="event-choices" id="event-choices"></div></dialog>
+  <div id="toast-region" aria-live="polite" aria-atomic="true"></div>
+<script>
+(() => {
+  'use strict';
+
+  // Persistent state is kept separate from derived rates and DOM concerns.
+  const SAVE_KEY = 'neonFrontierSave_v1';
+  const SAVE_INTERVAL = 10_000;
+  const EVENT_MIN = 30_000;
+  const EVENT_MAX = 60_000;
+  const OFFLINE_CAP = 4 * 60 * 60;
+  const BASE_STATE = () => ({gold:35,energy:12,research:0,population:120,territory:100,power:8,stability:72,clickLevel:0,buildings:{},tech:{},cycle:1,lastSaved:Date.now(),log:[]});
+  let state = BASE_STATE();
+  let currentFilter = 'all';
+  let eventTimer = null;
+  let toastTimer = null;
+  let lastTick = Date.now();
+
+  const projects = [
+    {id:'farm',name:'Hydroponic Farms',category:'economic',icon:'▤',cost:30,scale:1.16,desc:'Food security attracts new citizens and generates credits.',gold:0.75,research:0,pop:5,power:0},
+    {id:'factory',name:'Automated Foundry',category:'economic',icon:'⚙',cost:95,scale:1.18,desc:'Robotic production turns raw salvage into steady income.',gold:2.5,research:0,pop:2,power:1},
+    {id:'trade',name:'Trade Routes',category:'economic',icon:'⇄',cost:180,scale:1.2,desc:'Open safe corridors to exchange surplus with nearby settlements.',gold:5,research:0,pop:1,power:1},
+    {id:'lab',name:'Research Lab',category:'research',icon:'⌬',cost:120,scale:1.2,desc:'Scientists produce research points each second.',gold:0.4,research:0.8,pop:2,power:1},
+    {id:'outpost',name:'Defense Outpost',category:'military',icon:'⬡',cost:110,scale:1.19,desc:'Secure the border, raise influence, and protect the population.',gold:0.4,research:0,pop:1,power:5},
+    {id:'expansion',name:'Border Expansion',category:'military',icon:'⌖',cost:150,scale:1.24,desc:'Claim adjoining land and make room for future settlements.',gold:0.2,research:0,pop:8,power:2,territory:25},
+    {id:'click',name:'Efficient Field Kits',category:'economic',icon:'ϟ',cost:25,scale:1.55,desc:'Better tools improve every manual resource collection.',oneTime:false,click:1},
+    {id:'solar',name:'Solar Grid',category:'research',icon:'☼',cost:90,scale:1.7,desc:'Unlock clean energy; each upgrade improves your gathering yield.',oneTime:false,energyClick:1,requires:{tech:'basicGrid'}},
+    {id:'basicGrid',name:'Basic Grid Research',category:'research',icon:'⌘',cost:60,scale:1,desc:'A foundational study unlocks advanced energy infrastructure.',oneTime:true,tech:true,researchCost:8},
+    {id:'civic',name:'Civic Charter',category:'research',icon:'✧',cost:180,scale:1,desc:'A new constitution unlocks advanced trade and boosts national stability.',oneTime:true,tech:true,researchCost:28,requires:{tech:'basicGrid'}},
+    {id:'quantum',name:'Quantum Logistics',category:'research',icon:'⟁',cost:420,scale:1.85,desc:'A breakthrough multiplies income from every economic building.',oneTime:true,tech:true,researchCost:85,requires:{tech:'civic'}},
+    {id:'beacon',name:'Frontier Beacon',category:'military',icon:'✦',cost:350,scale:1.3,desc:'A signal tower expands your influence and raises the power index.',gold:1,research:0.25,pop:3,power:12,requires:{tech:'basicGrid'}}
+  ];
+  const events = [
+    {title:'Diplomatic Summit',description:'Delegates from the neighboring Meridian League arrive with an offer of cooperation. Their proposal could open doors, but our independence matters.',choices:[{label:'Sign a trade compact',detail:'+160 credits · +8 stability · +2 power',apply:s=>{s.gold+=160;s.stability=Math.min(100,s.stability+8);s.power+=2}}, {label:'Decline with respect',detail:'+15 power · preserve our autonomy',apply:s=>{s.power+=15;s.stability=Math.max(0,s.stability-2)}}]},
+    {title:'Unusual Resource Spike',description:'Survey drones found a rich vein of conductive ore beneath the eastern ridge. A rare windfall is within reach.',choices:[{label:'Deploy the survey crews',detail:'Spend 30 energy · gain 240 credits and 12 research',apply:s=>{if(s.energy>=30){s.energy-=30;s.gold+=240;s.research+=12}else{s.gold+=95;s.research+=5}}},{label:'Sell extraction rights',detail:'+170 credits · +4 stability',apply:s=>{s.gold+=170;s.stability=Math.min(100,s.stability+4)}}]},
+    {title:'Border Dispute',description:'A neighboring militia has moved a marker post into unsettled territory. Commanders recommend a measured response.',choices:[{label:'Fund a peaceful survey',detail:'Spend 90 credits · +10 stability · +5 territory',apply:s=>{if(s.gold>=90){s.gold-=90;s.stability=Math.min(100,s.stability+10);s.territory+=5}else{s.stability=Math.min(100,s.stability+2)}}},{label:'Deploy the defense corps',detail:'Spend 12 energy · +14 power · +3 territory',apply:s=>{if(s.energy>=12)s.energy-=12;s.power+=14;s.territory+=3;s.stability=Math.max(0,s.stability-7)}}]},
+    {title:'Workers’ Assembly',description:'Citizens are asking for better services as the settlement grows. A thoughtful investment could improve morale.',choices:[{label:'Fund a community grant',detail:'Spend 110 credits · +10 stability · +12 citizens',apply:s=>{if(s.gold>=110){s.gold-=110;s.stability=Math.min(100,s.stability+10);s.population+=12}else{s.stability=Math.min(100,s.stability+3)}}},{label:'Hold the line on spending',detail:'+35 credits · lose 5 stability',apply:s=>{s.gold+=35;s.stability=Math.max(0,s.stability-5)}}]},
+    {title:'Solar Flare Warning',description:'A burst of charged particles is heading for the frontier. Your technicians can shield the grid, though it will take resources.',choices:[{label:'Shield the power grid',detail:'Spend 20 energy · +45 credits · +6 stability',apply:s=>{if(s.energy>=20){s.energy-=20;s.gold+=45;s.stability=Math.min(100,s.stability+6)}else{s.stability=Math.max(0,s.stability-3)}}},{label:'Ride out the storm',detail:'No cost · lose 4 stability',apply:s=>{s.stability=Math.max(0,s.stability-4)}}]}
+  ];
+  const $ = id => document.getElementById(id);
+
+  // Resource yields are derived from owned projects so they stay consistent after loading.
+  function getRates(){
+    let gold=0,research=0,population=120,power=8,territory=100;
+    for(const project of projects){const count=state.buildings[project.id]||0;gold+=(project.gold||0)*count;research+=(project.research||0)*count;population+=(project.pop||0)*count;power+=(project.power||0)*count;territory+=(project.territory||0)*count;}
+    const multiplier=state.tech.quantum?2:1;
+    return {gold:gold*multiplier,research:research*multiplier,population,power,territory,energy:state.buildings.solar||0};
+  }
+  function costFor(project){return Math.ceil(project.cost*Math.pow(project.scale,state.buildings[project.id]||0));}
+  function fmt(value){if(!Number.isFinite(value))return '0';if(value>=1e9)return (value/1e9).toFixed(2)+'B';if(value>=1e6)return (value/1e6).toFixed(2)+'M';if(value>=1e4)return (value/1e3).toFixed(1)+'k';return Math.floor(value).toLocaleString();}
+  function fmtRate(value){return value<10?value.toFixed(1).replace(/\.0$/,''):fmt(value);}
+  function ownsRequirement(project){if(!project.requires)return true;return Boolean(state.tech[project.requires.tech]);}
+  function canAfford(project){return state.gold>=costFor(project)&&state.research>=(project.researchCost||0);}
+
+  // UI rendering is centralized; game state never depends on the rendered text.
+  function render(){
+    const rates=getRates();
+    $('gold-value').textContent=fmt(state.gold);$('energy-value').textContent=fmt(state.energy);$('population-value').textContent=fmt(rates.population);$('power-value').textContent=fmt(rates.power);
+    $('gold-rate').textContent='+'+fmtRate(rates.gold);$('energy-rate').textContent='+'+fmtRate(rates.energy);$('cycle').textContent=fmt(state.cycle);
+    $('territory-report').textContent=`Your settlement holds ${fmt(rates.territory)} km² of frontier.`;
+    $('research-report').textContent=`${fmtRate(state.research)} points banked · +${fmtRate(rates.research)} points per second`;
+    $('click-gold').textContent='+'+fmtRate(1+state.clickLevel)+' credit'+(1+state.clickLevel===1?'':'s');
+    $('click-energy').textContent='+'+fmtRate(1+(state.buildings.solar||0))+' charge';
+    const stability=Math.max(0,Math.min(100,state.stability));$('stability-bar').style.width=stability+'%';
+    $('stability-label').textContent=stability>=65?'Stable':stability>=35?'Watch':'Critical';
+    $('stability-label').style.color=stability>=65?'var(--lime)':stability>=35?'var(--amber)':'var(--red)';
+    const outlook=$('outlook-report');outlook.textContent=stability>=65?'The frontier is quiet. A good time to invest.':stability>=35?'Tensions are rising. Consider shoring up civic support.':'Civic trust is fragile. An event could have serious consequences.';outlook.className=stability>=65?'green':'yellow';
+    renderProjects();renderLog();
+  }
+  function renderProjects(){
+    const grid=$('upgrade-grid');const visible=projects.filter(p=>currentFilter==='all'||p.category===currentFilter);
+    grid.innerHTML=visible.map(p=>{
+      const count=state.buildings[p.id]||0,owned=Boolean(state.tech[p.id]),required=ownsRequirement(p),cost=costFor(p),researchCost=p.researchCost||0;
+      const disabled=owned||(p.oneTime&&owned)||!required||!canAfford(p);
+      let buttonText=owned?'Complete':(!required?'Locked':`Buy · ${fmt(cost)}`);
+      let sub=researchCost?`+ ${fmt(researchCost)} RP`:p.id==='click'?`Level ${count}`:p.oneTime?'One time':`Owned ${count}`;
+      if(p.id==='solar'&& !required)sub='Requires Basic Grid';
+      return `<article class="upgrade ${!required?'locked':''}"><div class="upgrade-icon" aria-hidden="true">${p.icon}</div><div><div class="upgrade-name">${p.name}</div><div class="upgrade-desc">${p.desc}</div><div class="upgrade-owned">${sub}</div></div><button class="buy" type="button" data-buy="${p.id}" ${disabled?'disabled':''}>${buttonText}${!owned&&required?`<small>${researchCost?fmt(researchCost)+' RP · ':''}${fmt(cost)} credits</small>`:''}</button></article>`;
+    }).join('')||'<div class="empty">No projects in this division yet.</div>';
+  }
+  function renderLog(){
+    const entries=state.log.slice(-5).reverse();
+    $('event-log').innerHTML=entries.length?entries.map(item=>`<div class="log-item ${item.kind==='event'?'event':''}"><span class="log-time">${item.time}</span><span>${escapeHTML(item.text)}</span></div>`).join(''):'<div class="log-item"><span class="log-time">NOW</span><span>Outpost established. Your first orders are ready.</span></div>';
+  }
+  function escapeHTML(value){return String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));}
+  function log(text,kind='info'){
+    state.log.push({time:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),text,kind});
+    if(state.log.length>20)state.log=state.log.slice(-20);
+  }
+  function notify(message){
+    const region=$('toast-region');region.innerHTML=`<div class="toast">${escapeHTML(message)}</div>`;
+    clearTimeout(toastTimer);toastTimer=setTimeout(()=>{region.replaceChildren();},2800);
+  }
+  function floatText(target,text,kind='good'){
+    const rect=target.getBoundingClientRect();const node=document.createElement('span');node.className='float '+kind;node.textContent=text;
+    node.style.left=(rect.left+rect.width/2)+'px';node.style.top=(rect.top+rect.height/2)+'px';document.body.append(node);node.addEventListener('animationend',()=>node.remove(),{once:true});
+  }
+  function gather(){
+    const gold=1+state.clickLevel,energy=1+(state.buildings.solar||0);
+    state.gold+=gold;state.energy+=energy;render();
+    floatText($('gather-button'),`+${fmtRate(gold)} credits`, 'goldfloat');
+    floatText($('gather-button'),`+${fmtRate(energy)} energy`,'good');
+  }
+  function buyProject(id,button){
+    const project=projects.find(p=>p.id===id);if(!project)return;
+    const cost=costFor(project),researchCost=project.researchCost||0;
+    if(!ownsRequirement(project)){notify('Complete the prerequisite research first.');return;}
+    if(state.gold<cost||state.research<researchCost){notify('Your treasury or research reserve is too low.');return;}
+    state.gold-=cost;state.research-=researchCost;
+    if(project.tech)state.tech[id]=true;
+    else if(id==='click')state.clickLevel++;
+    else state.buildings[id]=(state.buildings[id]||0)+1;
+    log(`${project.name} ${project.oneTime?'completed':'commissioned'}.`);render();
+    floatText(button,'PROJECT FUNDED','good');notify(`${project.name} funded.`);
+  }
+  function setFilter(filter){
+    currentFilter=filter;
+    document.querySelectorAll('[data-filter]').forEach(button=>button.classList.toggle('active',button.dataset.filter===filter));
+    renderProjects();
+    if(filter!=='all')$('upgrade-heading').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  // Events arrive at a fresh random interval after each decision.
+  function scheduleEvent(){clearTimeout(eventTimer);eventTimer=setTimeout(triggerEvent,EVENT_MIN+Math.random()*(EVENT_MAX-EVENT_MIN));}
+  function triggerEvent(){
+    const event=events[Math.floor(Math.random()*events.length)];
+    $('event-title').textContent=event.title;$('event-description').textContent=event.description;
+    const choices=$('event-choices');choices.replaceChildren();
+    event.choices.forEach(choice=>{const button=document.createElement('button');button.type='button';button.className='choice';button.innerHTML=`<strong>${escapeHTML(choice.label)}</strong><span>${escapeHTML(choice.detail)}</span>`;button.addEventListener('click',()=>{
+      choice.apply(state);state.stability=Math.max(0,Math.min(100,state.stability));log(`${event.title}: ${choice.label}.`,'event');$('event-dialog').close();render();notify('Decision recorded: '+choice.label);scheduleEvent();
+    });choices.append(button);});
+    if(!$('event-dialog').open)$('event-dialog').showModal();
+  }
+
+  // Saves are versioned and validated so a damaged browser entry cannot break the game.
+  function saveGame(silent=false){
+    try{state.lastSaved=Date.now();localStorage.setItem(SAVE_KEY,JSON.stringify(state));$('save-status').textContent='Saved just now';if(!silent)notify('Progress saved to this browser.');return true;}
+    catch(error){$('save-status').textContent='Save unavailable';if(!silent)notify('Could not save. Browser storage may be unavailable.');return false;}
+  }
+  function loadGame(){
+    try{
+      const raw=localStorage.getItem(SAVE_KEY);if(!raw){notify('No saved game found in this browser.');return false;}
+      const saved=JSON.parse(raw);
+      if(!saved||typeof saved!=='object'||!Number.isFinite(saved.gold))throw new Error('Invalid save data');
+      const fresh=BASE_STATE();
+      for(const key of ['gold','energy','research','population','territory','power','stability','clickLevel','cycle'])if(Number.isFinite(saved[key]))fresh[key]=Math.max(0,saved[key]);
+      if(saved.buildings&&typeof saved.buildings==='object')for(const p of projects)if(Number.isFinite(saved.buildings[p.id]))fresh.buildings[p.id]=Math.max(0,Math.floor(saved.buildings[p.id]));
+      if(saved.tech&&typeof saved.tech==='object')for(const p of projects)if(p.tech)fresh.tech[p.id]=saved.tech[p.id]===true;
+      fresh.log=Array.isArray(saved.log)?saved.log.filter(x=>x&&typeof x.text==='string'&&typeof x.time==='string').slice(-20):[];
+      const elapsed=Math.min(OFFLINE_CAP,Math.max(0,(Date.now()-(Number(saved.lastSaved)||Date.now()))/1000));
+      const previous=state;state=fresh;
+      const rates=getRates();state.gold+=rates.gold*elapsed;state.research+=rates.research*elapsed;state.energy+=rates.energy*elapsed;state.cycle+=elapsed/60;
+      if(elapsed>=5){log(`Offline production credited for ${Math.floor(elapsed/60)} minute${elapsed>=120?'s':''}.`);}
+      render();$('save-status').textContent='Save loaded';notify(elapsed>=5?'Save loaded. Offline production added.':'Save loaded.');return true;
+    }catch(error){notify('The saved game could not be read. Start a new settlement or reset the save.');return false;}
+  }
+  function resetGame(){
+    if(!window.confirm('Reset all Neon Frontier progress in this browser? This cannot be undone.'))return;
+    state=BASE_STATE();localStorage.removeItem(SAVE_KEY);lastTick=Date.now();render();scheduleEvent();$('save-status').textContent='New settlement';notify('A new settlement has been established.');
+  }
+  function tick(){
+    const now=Date.now(),elapsed=Math.min(5,(now-lastTick)/1000);lastTick=now;
+    const rates=getRates();state.gold+=rates.gold*elapsed;state.research+=rates.research*elapsed;state.energy+=rates.energy*elapsed;state.cycle+=elapsed/60;
+    if(elapsed>0)render();
+  }
+  function bindEvents(){
+    $('gather-button').addEventListener('click',gather);
+    $('upgrade-grid').addEventListener('click',event=>{const button=event.target.closest('[data-buy]');if(button&&!button.disabled)buyProject(button.dataset.buy,button);});
+    document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>setFilter(button.dataset.filter)));
+    $('save-button').addEventListener('click',()=>saveGame());$('load-button').addEventListener('click',loadGame);$('reset-button').addEventListener('click',resetGame);
+    $('event-dismiss').addEventListener('click',()=>{if($('event-dialog').open){$('event-dialog').close();scheduleEvent();}});
+    $('event-dialog').addEventListener('cancel',()=>scheduleEvent());
+    document.addEventListener('keydown',event=>{if(event.code==='Space'&&!event.repeat&&!event.target.matches('button,input,textarea,select,[contenteditable="true"]')&&!$('event-dialog').open){event.preventDefault();gather();}});
+    window.addEventListener('beforeunload',()=>saveGame(true));
+  }
+
+  // Initialization and timed loops.
+  bindEvents();
+  if(localStorage.getItem(SAVE_KEY))loadGame();else log('Outpost established. Your first orders are ready.');
+  render();lastTick=Date.now();
+  setInterval(tick,1000);
+  setInterval(()=>saveGame(true),SAVE_INTERVAL);
+  scheduleEvent();
+})();
+</script>
+</body>
+</html>
