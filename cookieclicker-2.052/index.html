@@ -43,6 +43,7 @@ var App=typeof App==='undefined'?0:App;
 </script>
 
 <link href="style.css?v=9" rel="stylesheet" type="text/css">
+<link href="theme.css" rel="stylesheet" type="text/css">
 <script  src="main.js?v=10"></script>
 
 <!-- ad -->
@@ -64,7 +65,7 @@ var App=typeof App==='undefined'?0:App;
 
 <!--[if lt IE9]><script src="excanvas.compiled.js"></script><![endif]-->
 </head>
-<body>
+<body data-cookie-theme="original">
 
 <div id="wrapper">
 
@@ -89,6 +90,15 @@ var App=typeof App==='undefined'?0:App;
 				<a href="//orteil.dashnet.org/cookieclicker/v10466" target="_blank" id="linkVersionOld">v. 1.0466</a>
 				<a href="//orteil.dashnet.org/experiments/cookie/" target="_blank">Classic</a>
 			</div>
+		</div>
+		<div id="ccThemeControl">
+			<label for="ccThemeSelect">Theme</label>
+			<select id="ccThemeSelect" aria-label="Choose Cookie Clicker theme">
+				<option value="pure-black">Pure Black</option>
+				<option value="original">Original</option>
+				<option value="night">Night</option>
+				<option value="white">White</option>
+			</select>
 		</div>
 	</div>
 	<div id="game">
@@ -269,6 +279,8 @@ var App=typeof App==='undefined'?0:App;
 	</div>
 
 </div>
+
+<script src="theme.js"></script>
 
 </body>
 </html>

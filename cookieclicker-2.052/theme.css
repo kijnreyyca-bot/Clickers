@@ -1,0 +1,162 @@
+/* UI polish and theme palettes. Existing game backgrounds and image sprites stay in place. */
+body[data-cookie-theme] {
+  --cc-text: #f4f0df;
+  --cc-muted: #c4bfae;
+  --cc-edge: rgb(230 215 155 / 24%);
+  --cc-surface: rgb(11 10 8 / 72%);
+  --cc-surface-raised: rgb(24 22 17 / 88%);
+  --cc-accent: #e2c66f;
+  --cc-focus: #f6dc86;
+  color: var(--cc-text);
+}
+
+/* Keep the original top-bar texture; only refine its edge and controls. */
+#topBar {
+  border-bottom: 1px solid var(--cc-edge);
+  box-shadow: 0 5px 20px rgb(0 0 0 / 24%);
+  backdrop-filter: blur(10px);
+}
+
+#topBar > div {
+  border-right-color: var(--cc-edge);
+  box-shadow: inset 0 1px rgb(255 255 255 / 5%);
+  transition: background-color .16s ease, color .16s ease;
+}
+
+#topBar > div:hover { background-color: rgb(255 255 255 / 5%); }
+
+#topBar a, #topBar a:visited { transition: color .16s ease, text-shadow .16s ease; }
+
+#ccThemeControl {
+  display: inline-flex !important;
+  float: right !important;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 9px !important;
+  color: var(--cc-muted);
+  font: 10px/1 Tahoma, Arial, sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+#ccThemeSelect {
+  min-width: 112px;
+  padding: 5px 8px;
+  border: 1px solid var(--cc-edge);
+  border-radius: 7px;
+  background-color: var(--cc-surface-raised);
+  color: var(--cc-text);
+  font: 11px Tahoma, Arial, sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+  cursor: pointer;
+}
+
+#ccThemeSelect:focus-visible { outline: 2px solid var(--cc-focus); outline-offset: 2px; }
+
+/* Reuse Cookie Clicker's existing textures and sprite images on panels. */
+.framed, a.option, a.option.framed, .sliderBox, .smallFramed, a.smallFancyButton {
+  border-color: var(--cc-edge) !important;
+  border-radius: 8px;
+  background-color: var(--cc-surface) !important;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 25%), inset 0 1px rgb(255 255 255 / 8%);
+  color: var(--cc-text);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 65%);
+}
+
+a.option, textarea, input[type="text"], .sliderBox, a.smallFancyButton { border-radius: 7px; }
+textarea, input[type="text"] { border-color: var(--cc-edge); }
+
+.panelButton {
+  border-radius: 8px;
+  color: var(--cc-muted);
+  transition: color .16s ease, filter .16s ease, transform .16s ease;
+}
+
+.panelButton:hover, .panelButton.selected { color: var(--cc-text); filter: brightness(1.15); }
+.panelButton:active { transform: translateY(1px); }
+
+.subButton {
+  border-radius: 8px;
+  box-shadow: 0 1px 0 rgb(255 255 255 / 12%) inset, 0 5px 14px rgb(0 0 0 / 30%);
+  transition: box-shadow .16s ease, transform .16s ease;
+}
+
+.subButton:hover { transform: translateY(-1px); }
+
+#sectionRight {
+  border-left: 1px solid var(--cc-edge);
+  background-color: var(--cc-surface);
+  box-shadow: -8px 0 26px rgb(0 0 0 / 15%);
+}
+
+.storeSection { border-radius: 9px; transition: filter .16s ease; }
+.storeSection:hover { filter: brightness(1.08); }
+.product { border-radius: 8px; transition: filter .16s ease, transform .16s ease; }
+.product.enabled:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.productButton { border-radius: 6px; transition: filter .15s ease, transform .15s ease; }
+.productButton:hover { filter: brightness(1.12); }
+.productButton:active { transform: translateY(1px); }
+.crate { border-radius: 7px; }
+.listing, .listing b, .listing small { color: var(--cc-text); }
+
+/* Theme variables affect interface chrome and controls without replacing art or texture images. */
+body[data-cookie-theme="pure-black"] {
+  --cc-text: #f5f5f5;
+  --cc-muted: #aaa;
+  --cc-edge: rgb(255 255 255 / 13%);
+  --cc-surface: rgb(0 0 0 / 86%);
+  --cc-surface-raised: rgb(12 12 12 / 94%);
+  --cc-accent: #a99aff;
+  --cc-focus: #b7aaff;
+}
+
+body[data-cookie-theme="original"] {
+  --cc-text: #f4f0df;
+  --cc-muted: #c4bfae;
+  --cc-edge: rgb(230 215 155 / 24%);
+  --cc-surface: rgb(11 10 8 / 72%);
+  --cc-surface-raised: rgb(24 22 17 / 88%);
+  --cc-accent: #e2c66f;
+  --cc-focus: #f6dc86;
+}
+
+body[data-cookie-theme="night"] {
+  --cc-text: #f1f1f1;
+  --cc-muted: #aaa;
+  --cc-edge: rgb(255 255 255 / 12%);
+  --cc-surface: rgb(15 15 15 / 88%);
+  --cc-surface-raised: rgb(33 33 33 / 95%);
+  --cc-accent: #ff4e45;
+  --cc-focus: #ff6c65;
+}
+
+body[data-cookie-theme="white"] {
+  --cc-text: #0f0f0f;
+  --cc-muted: #606060;
+  --cc-edge: rgb(0 0 0 / 13%);
+  --cc-surface: rgb(255 255 255 / 88%);
+  --cc-surface-raised: rgb(255 255 255 / 96%);
+  --cc-accent: #c00;
+  --cc-focus: #c00;
+}
+
+body[data-cookie-theme="white"] .framed,
+body[data-cookie-theme="white"] a.option,
+body[data-cookie-theme="white"] .sliderBox,
+body[data-cookie-theme="white"] .smallFramed,
+body[data-cookie-theme="white"] a.smallFancyButton {
+  text-shadow: 0 1px 2px rgb(255 255 255 / 65%);
+}
+
+body[data-cookie-theme="white"] .panelButton { text-shadow: 0 1px 1px rgb(255 255 255 / 55%); }
+body[data-cookie-theme="white"] #sectionRight { box-shadow: -8px 0 26px rgb(0 0 0 / 8%); }
+
+@media (max-width: 1100px) {
+  #ccThemeControl { gap: 4px; padding-inline: 5px !important; }
+  #ccThemeSelect { min-width: 96px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #topBar > div, #topBar a, .panelButton, .subButton, .storeSection, .product, .productButton { transition-duration: .01ms !important; }
+}
