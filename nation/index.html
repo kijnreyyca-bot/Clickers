@@ -20,6 +20,10 @@
     .toast{position:fixed;right:20px;bottom:20px;z-index:12;max-width:min(360px,calc(100vw - 40px));padding:11px 14px;border:1px solid #3a4b57;background:#111a23;color:var(--text);font-size:11px;box-shadow:0 10px 35px #0008;animation:toastin .2s ease-out}@keyframes toastin{from{transform:translateY(8px);opacity:0}to{transform:translateY(0);opacity:1}}
     @media(max-width:980px){.shell{grid-template-columns:205px minmax(0,1fr)}.dashboard{grid-template-columns:1fr}.command{min-height:220px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:620px){.shell{display:block}.sidebar{position:sticky;z-index:5;top:0;width:100%;height:auto;padding:0 13px;border-right:0;border-bottom:1px solid var(--line)}.brand{height:55px;padding:0;border:0}.brand-mark{width:29px;height:29px}.side-label,.side-card,.side-spacer,.side-foot{display:none}.nav{display:flex;gap:3px;overflow:auto;padding:0 0 8px;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}.nav button{width:auto;flex:none;gap:6px;padding:6px 9px;font-size:10px;white-space:nowrap}.nav-icon{width:auto}.main{padding:16px 13px 35px}.topbar{padding-bottom:13px}.top-title{font-size:17px}.save-state{display:none}.top-actions button{padding:7px 8px;font-size:10px}.welcome{padding:18px 0 13px;align-items:start}.welcome h2{font-size:24px}.season{font-size:8px;padding:5px 7px}.metric{padding:11px}.metric-value{font-size:22px}.dashboard{gap:10px;margin-top:10px}.command{min-height:210px;padding:18px}.upgrade-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.filters{max-width:100%;overflow:auto}.bottom-grid{grid-template-columns:1fr;gap:10px}.panel-head{padding:12px 13px}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .strategy-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:25px 0 12px}.strategy-head h2{margin:4px 0 0;font-size:17px}.scenario-controls{display:flex;flex-wrap:wrap;align-items:center;gap:7px}.scenario-controls select,.country-tools select{min-width:210px;padding:8px 10px;border:1px solid var(--line);background:#101821;color:var(--text);font:inherit;font-size:11px}.speed-controls{display:flex;gap:4px}.speed-controls button,.tool-btn{padding:8px 10px;border:1px solid var(--line);background:var(--panel);color:#a9b5bf;font-size:10px;cursor:pointer}.speed-controls button.active,.tool-btn.active{border-color:#59e1ce66;background:#59e1ce14;color:var(--cyan)}.strategy-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(265px,.8fr);border:1px solid var(--line);background:var(--panel)}.map-column{min-width:0;border-right:1px solid var(--line)}.map-topline{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 13px;border-bottom:1px solid var(--line);color:#8796a3;font-size:10px}.map-topline strong{color:var(--text);font-size:11px}.map-topline .god-tools{display:flex;gap:4px;align-items:center}.god-tools[hidden]{display:none}.god-tools input[type=color]{width:28px;height:26px;padding:1px;border:1px solid var(--line);background:var(--panel);cursor:pointer}.map-stage{position:relative;height:clamp(285px,38vw,470px);min-height:250px;background:radial-gradient(ellipse at 50% 48%,#12343a80,transparent 64%),#0a1119;overflow:hidden}.map-stage canvas{display:block;width:100%;height:100%;cursor:crosshair}.map-tooltip{position:absolute;z-index:2;display:none;pointer-events:none;max-width:240px;padding:8px 10px;border:1px solid #3b4d58;background:#0b121beF;box-shadow:0 8px 25px #0009;font-size:10px}.map-tooltip strong{display:block;color:var(--cyan);font-size:11px}.map-tooltip span{display:block;margin-top:3px;color:#a4b0ba}.map-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;border-top:1px solid var(--line);color:#6f7e8b;font-size:9px}.map-legend{display:flex;align-items:center;gap:6px}.legend-dot{width:8px;height:8px;border-radius:50%;background:var(--cyan)}.inspector{min-width:0;padding:13px}.inspector-top{display:flex;align-items:start;justify-content:space-between;gap:8px}.inspector-top h3{margin:3px 0 0;font-size:17px;letter-spacing:-.03em}.nation-tag{padding:4px 6px;border:1px solid #59e1ce35;color:var(--cyan);font-size:8px;letter-spacing:.12em;text-transform:uppercase}.nation-desc{margin:8px 0 12px;color:#81909d;font-size:10px;line-height:1.5}.nation-stats{display:grid;grid-template-columns:1fr 1fr;gap:5px}.nation-stat{padding:7px 8px;border:1px solid #202d38;background:#ffffff03}.nation-stat span{display:block;color:#738390;font-size:8px;text-transform:uppercase;letter-spacing:.09em}.nation-stat strong{display:block;margin-top:3px;font-size:12px;font-variant-numeric:tabular-nums}.country-tools{display:grid;gap:7px;margin-top:11px}.country-tools select{width:100%;min-width:0}.country-actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}.country-actions button,.country-tools button{padding:8px 6px;border:1px solid var(--line);background:#ffffff05;color:#bac4cc;font-size:9px;cursor:pointer}.country-actions button:hover,.country-tools button:hover{border-color:#59e1ce66;color:var(--cyan)}.country-actions .war-btn{border-color:#ff77844a;color:#ff8f99}.country-actions .war-btn:hover{border-color:var(--red);background:#ff77840b}.country-tools button:disabled,.country-actions button:disabled{opacity:.4;cursor:not-allowed}.allocation{display:grid;grid-template-columns:1fr auto;gap:2px 8px;align-items:center;color:#83919d;font-size:9px}.allocation input{grid-column:1/-1;width:100%;accent-color:var(--cyan)}.intel-status{margin-top:8px;padding:8px;border-left:2px solid var(--amber);background:#ffc66d08;color:#bfaa85;font-size:9px;line-height:1.5}.intel-status[hidden]{display:none}.war-line{margin-top:7px;padding:8px;border:1px solid #ff77843d;background:#ff778407;color:#d39ba1;font-size:9px}.war-progress{height:3px;margin-top:5px;background:#35242a}.war-progress i{display:block;height:100%;background:var(--red)}.achievements{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}.achievement{display:flex;gap:8px;align-items:center;padding:9px;border:1px solid var(--line);background:var(--panel)}.achievement-icon{color:#657685;font-size:16px}.achievement.unlocked .achievement-icon{color:var(--amber)}.achievement strong{display:block;font-size:9px}.achievement span{display:block;margin-top:2px;color:#758492;font-size:8px}.achievement-note{margin-top:6px;color:#6f7d89;font-size:9px}.god-toggle{display:flex;align-items:center;gap:8px;color:#9aa8b5;font-size:10px}.god-toggle input{width:15px;height:15px;accent-color:var(--amber)}.map-source-note{padding:7px 12px;border-top:1px solid var(--line);color:#667582;font-size:8px;line-height:1.45}.peace-content{padding:20px}.peace-content h2{margin:0 0 8px;font-size:19px}.peace-content p{color:#9aa7b2;font-size:11px}.peace-actions{display:flex;gap:8px}.peace-actions button{flex:1;padding:10px;border:1px solid var(--line);background:#ffffff06;cursor:pointer}.peace-actions button:first-child{border-color:#59e1ce66;color:var(--cyan)}
+    @media(max-width:920px){.strategy-grid{grid-template-columns:1fr}.map-column{border-right:0;border-bottom:1px solid var(--line)}.map-stage{height:clamp(260px,52vw,440px)}.inspector{padding:12px}.achievements{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:620px){.strategy-head{align-items:start;flex-direction:column;margin-top:18px}.scenario-controls{width:100%}.scenario-controls select{flex:1;min-width:190px}.speed-controls{width:100%}.speed-controls button{flex:1}.map-stage{height:290px}.map-topline{align-items:start;flex-wrap:wrap}.map-foot{align-items:start;flex-direction:column}.achievements{grid-template-columns:1fr}.country-actions button,.country-tools button{min-height:38px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
   </style>
 </head>
@@ -42,6 +46,19 @@
     <main class="main">
       <header class="topbar"><div><div class="eyebrow">National operations</div><h1 class="top-title">Command center</h1></div><div class="top-actions"><span class="save-state" id="save-status" aria-live="polite">Autosave ready</span><button type="button" id="save-button">Save</button></div></header>
       <section class="welcome"><div><div class="eyebrow">Frontier settlement · Sector 07</div><h2>Good day, Commander.</h2><p>Turn a small outpost into a thriving independent nation.</p></div><div class="season">◷ &nbsp; Cycle <span id="cycle">1</span></div></section>
+      <section aria-labelledby="map-heading">
+        <div class="strategy-head"><div><div class="eyebrow">Theater of operations</div><h2 id="map-heading">World map &amp; national command</h2></div><div class="scenario-controls"><label class="sr-only" for="scenario-select">Map scenario</label><select id="scenario-select" aria-label="Choose map scenario">
+          <optgroup label="World scenarios"><option value="modern-world">Modern Day World Map</option><option value="ww2-1939">1939 World Map · Start of WWII</option><option value="ww2-1940">1940 World Map</option><option value="ww2-1941">1941 World Map</option><option value="ww2-1942">1942 World Map</option></optgroup>
+          <optgroup label="Americas"><option value="modern-americas">Modern Day Americas Map</option><option value="americas-1800">1800s Americas Map</option></optgroup>
+          <optgroup label="Asia"><option value="asia-modern">Asia Map · Modern Day (2026)</option><option value="asia-1942">Asia Map · 1942</option><option value="asia-1941">Asia Map · 1941</option><option value="asia-1940">Asia Map · 1940</option><option value="asia-1939">Asia Map · 1939</option><option value="qing-1800">Peak Qing Dynasty · c. 1790–1820</option></optgroup>
+        </select><div class="speed-controls" aria-label="Simulation speed"><button type="button" data-speed="0" class="active">Ⅱ Pause</button><button type="button" data-speed="1">1×</button><button type="button" data-speed="2">2×</button><button type="button" data-speed="5">5×</button></div></div></div>
+        <div class="strategy-grid"><div class="map-column"><div class="map-topline"><span><strong id="map-era">Modern world</strong> · <span id="map-date">2026</span></span><span id="campaign-state">SIMULATION PAUSED</span><span class="god-tools" id="god-tools" hidden><button id="force-annex-mode" class="tool-btn" type="button">Force Annex</button><button id="paint-mode" class="tool-btn" type="button">Map Painter</button><input id="paint-color" type="color" value="#ffcc55" aria-label="Paint color"></span></div><div class="map-stage" id="map-stage"><canvas id="world-map" aria-label="Interactive country map"></canvas><div class="map-tooltip" id="map-tooltip"></div></div><div class="map-foot"><span id="map-count">Loading country borders…</span><span class="map-legend"><i class="legend-dot"></i> Selected nation &nbsp; · &nbsp; <span id="map-tool-hint">Click any country to select it</span></span></div><div class="map-source-note">Historical maps use the available 1938 and 1800 boundary datasets as period basemaps; wartime control is stylized for gameplay and does not represent every front line or occupied zone.</div></div>
+          <aside class="inspector" aria-label="Selected country command"><div class="inspector-top"><div><div class="eyebrow">Selected nation</div><h3 id="nation-name">Select a country</h3></div><span class="nation-tag" id="nation-status">UNASSIGNED</span></div><p class="nation-desc" id="nation-desc">Click a country on the map to open its national command.</p><div class="nation-stats"><div class="nation-stat"><span>Economy</span><strong id="nation-economy">—</strong></div><div class="nation-stat"><span>Military</span><strong id="nation-military">—</strong></div><div class="nation-stat"><span>Population</span><strong id="nation-pop">—</strong></div><div class="nation-stat"><span>Alliance</span><strong id="nation-alliance">—</strong></div></div>
+            <div class="country-tools"><label class="allocation" for="army-allocation"><span>Army committed to front</span><strong id="allocation-value">35%</strong><input id="army-allocation" type="range" min="10" max="100" step="5" value="35"></label><label class="sr-only" for="target-select">Diplomatic target</label><select id="target-select" aria-label="Choose diplomatic target"><option value="">Choose a target nation…</option></select><div class="country-actions"><button type="button" id="invest-button">Invest in economy · 50</button><button type="button" id="recruit-button">Recruit army · 30</button><button type="button" id="alliance-button">Form alliance</button><button type="button" id="aid-button">Send military aid</button><button type="button" class="war-btn" id="war-button">Declare war</button><button type="button" id="annex-button" disabled>Peace terms</button></div></div>
+            <div class="war-line" id="war-status" hidden></div><div class="intel-status" id="god-status" hidden></div><label class="god-toggle" style="margin-top:13px"><input id="god-mode-toggle" type="checkbox"><span>God Mode</span></label>
+          </aside></div>
+        <div class="section-head" style="margin-top:16px"><div><h2>Achievements</h2><p>Milestones earned in this campaign save.</p></div><span id="achievement-state" class="panel-kicker">0 / 3 unlocked</span></div><div class="achievements" id="achievement-list"></div><div id="achievement-note" class="achievement-note"></div>
+      </section>
       <section class="metrics" aria-label="National metrics">
         <article class="metric"><div class="metric-label"><span>◉</span> Treasury</div><div id="gold-value" class="metric-value gold">0</div><div class="metric-sub"><span id="gold-rate">+0</span> credits / second</div></article>
         <article class="metric"><div class="metric-label"><span>ϟ</span> Energy</div><div id="energy-value" class="metric-value energy">0</div><div class="metric-sub"><span id="energy-rate">+0</span> charge per second</div></article>
@@ -69,7 +86,9 @@
     </main>
   </div>
   <dialog id="event-dialog" aria-labelledby="event-title"><div class="event-top"><button class="event-close" type="button" id="event-dismiss" aria-label="Dismiss event">×</button><div class="event-tag">Incoming situation · Decision required</div><h2 id="event-title"></h2></div><div class="event-body" id="event-description"></div><div class="event-choices" id="event-choices"></div></dialog>
+  <dialog id="peace-dialog" aria-labelledby="peace-title"><div class="event-top"><div class="event-tag">Victory · Peace conference</div><h2 id="peace-title">The front has collapsed</h2></div><div class="peace-content"><p id="peace-description"></p><div class="peace-actions"><button type="button" id="annex-choice">Annex territory</button><button type="button" id="puppet-choice">Install a puppet government</button></div></div></dialog>
   <div id="toast-region" aria-live="polite" aria-atomic="true"></div>
+<script src="./map-data.js"></script>
 <script>
 (() => {
   'use strict';
@@ -80,12 +99,33 @@
   const EVENT_MIN = 30_000;
   const EVENT_MAX = 60_000;
   const OFFLINE_CAP = 4 * 60 * 60;
-  const BASE_STATE = () => ({gold:35,energy:12,research:0,population:120,territory:100,power:8,stability:72,clickLevel:0,buildings:{},tech:{},cycle:1,lastSaved:Date.now(),log:[]});
+  const MAP_SCENARIOS = {
+    'modern-world':{label:'Modern world',date:2026,source:'modern',region:'World',start:'United States'},
+    'ww2-1939':{label:'World · WWII begins',date:1939,source:'ww2',region:'World',start:'United States'},
+    'ww2-1940':{label:'World · 1940',date:1940,source:'ww2',region:'World',start:'United States'},
+    'ww2-1941':{label:'World · 1941',date:1941,source:'ww2',region:'World',start:'United States'},
+    'ww2-1942':{label:'World · 1942',date:1942,source:'ww2',region:'World',start:'United States'},
+    'modern-americas':{label:'Americas',date:2026,source:'modern',region:'Americas',start:'United States'},
+    'americas-1800':{label:'Americas · 1800s',date:1800,source:'qing',region:'Americas',start:'United States of America'},
+    'asia-modern':{label:'Asia',date:2026,source:'modern',region:'Asia',start:'China'},
+    'asia-1942':{label:'Asia · 1942',date:1942,source:'ww2',region:'Asia',start:'Empire of Japan'},
+    'asia-1941':{label:'Asia · 1941',date:1941,source:'ww2',region:'Asia',start:'Empire of Japan'},
+    'asia-1940':{label:'Asia · 1940',date:1940,source:'ww2',region:'Asia',start:'Empire of Japan'},
+    'asia-1939':{label:'Asia · 1939',date:1939,source:'ww2',region:'Asia',start:'Empire of Japan'},
+    'qing-1800':{label:'Peak Qing Dynasty',date:1800,source:'qing',region:'Asia',start:'Qing Empire'}
+  };
+  const BASE_STATE = () => ({gold:35,energy:12,research:0,population:120,territory:100,power:8,stability:72,clickLevel:0,buildings:{},tech:{},cycle:1,lastSaved:Date.now(),log:[],scenario:'modern-world',speed:0,worldDays:0,playerNation:'United States',targetNation:'',nations:{},territoryOwners:{},customColors:{},puppets:{},wars:[],alliances:[],achievements:[],achievementsDisabled:false,godMode:false,mapTool:'select',armyAllocation:35,pendingPeace:null});
   let state = BASE_STATE();
   let currentFilter = 'all';
   let eventTimer = null;
   let toastTimer = null;
   let lastTick = Date.now();
+  let mapObjects = [];
+  let mapBounds = {minX:-180,maxX:180,minY:-58,maxY:82};
+  const visibleCache=new Map();
+  let mapDirty = true;
+  let mapResizeObserver = null;
+  let peaceQueued = false;
 
   const projects = [
     {id:'farm',name:'Hydroponic Farms',category:'economic',icon:'▤',cost:30,scale:1.16,desc:'Food security attracts new citizens and generates credits.',gold:0.75,research:0,pop:5,power:0},
@@ -110,23 +150,260 @@
   ];
   const $ = id => document.getElementById(id);
 
+  const MAP_PALETTE=['#4bbfb3','#e4a14f','#7698e4','#cb79a3','#88b767','#aa8be5','#db795e','#55a5ce','#c4b35c','#8c9ead','#68b08b','#d07e72'];
+  const WW2_TERRITORY={
+    1940:{'Denmark':'Germany','Luxembourg':'Germany','Poland':'Germany','Ethiopia (Italy)':'Italy'},
+    1941:{'Denmark':'Germany','Luxembourg':'Germany','Poland':'Germany','Belgium':'Germany','Netherlands':'Germany','Norway':'Germany','Yugoslavia':'Germany','Greece':'Germany','Albania':'Italy','Ethiopia (Italy)':'Italy','Cochin China':'Empire of Japan','French Indo-China':'Empire of Japan','Siam':'Empire of Japan'},
+    1942:{'Denmark':'Germany','Luxembourg':'Germany','Poland':'Germany','Belgium':'Germany','Netherlands':'Germany','Norway':'Germany','Yugoslavia':'Germany','Greece':'Germany','Albania':'Italy','Ethiopia (Italy)':'Italy','Cochin China':'Empire of Japan','French Indo-China':'Empire of Japan','Siam':'Empire of Japan','Burma':'Empire of Japan','Malaya':'Empire of Japan','Philippines':'Empire of Japan','Hong Kong':'Empire of Japan','Singapore':'Empire of Japan'}
+  };
+  const ACHIEVEMENT_DEFS=[
+    {id:'unify-asia',icon:'⌖',name:'Unify Asia',desc:'Bring every mapped Asian nation under your flag.'},
+    {id:'neutral-survivor',icon:'◈',name:'Survive as WWII Neutral',desc:'Remain neutral for 30 simulated days in a WWII campaign.'},
+    {id:'world-conquest',icon:'✦',name:'World Conquest',desc:'Control every nation visible in this scenario.'}
+  ];
+  function activeScenario(){return MAP_SCENARIOS[state.scenario]||MAP_SCENARIOS['modern-world'];}
+  function stableHash(value){let hash=2166136261;for(const ch of String(value)){hash^=ch.charCodeAt(0);hash=Math.imul(hash,16777619);}return hash>>>0;}
+  function countryColor(name){return MAP_PALETTE[stableHash(name)%MAP_PALETTE.length];}
+  function featureCoordinates(geometry,callback){
+    const visitLine=line=>line.forEach(point=>callback(point[0],point[1]));
+    if(geometry.type==='Polygon')geometry.coordinates.forEach(visitLine);
+    else if(geometry.type==='MultiPolygon')geometry.coordinates.forEach(poly=>poly.forEach(visitLine));
+  }
+  function classifyRegion(feature){
+    const provided=feature.properties.continent;
+    if(provided){if(provided==='North America'||provided==='South America'||provided==='Seven seas (open ocean)')return 'Americas';return provided;}
+    let minX=180,maxX=-180,minY=90,maxY=-90;
+    featureCoordinates(feature.geometry,(x,y)=>{minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y);});
+    const x=(minX+maxX)/2,y=(minY+maxY)/2;
+    if(x < -24 && x > -180)return 'Americas';
+    if(x > 22 && x < 180 && y > -17 && y < 82)return 'Asia';
+    if(x > -20 && x < 55 && y < 38 && y > -40)return 'Africa';
+    if(x > -14 && x < 45 && y >= 35 && y < 75)return 'Europe';
+    if(y < -42)return 'Antarctica';
+    return 'Oceania';
+  }
+  function baseFeatureOwner(feature){
+    const scenario=activeScenario();const year=scenario.date;
+    if(scenario.source==='ww2'&&year>=1940){
+      const overrides=WW2_TERRITORY[year]||{};
+      if(overrides[feature.properties.name])return overrides[feature.properties.name];
+    }
+    return feature.properties.owner||feature.properties.name;
+  }
+  function territoryKey(feature){return state.scenario+'|'+feature.id;}
+  function featureOwner(feature){const key=territoryKey(feature);return state.territoryOwners[key]||baseFeatureOwner(feature);}
+  function visibleFeatures(){
+    const scenario=activeScenario();const sets=window.NEON_MAP_DATA;
+    if(!sets)return [];
+    if(visibleCache.has(state.scenario))return visibleCache.get(state.scenario);
+    const all=sets[scenario.source==='modern'?'modern':scenario.source==='ww2'?'ww2':'qing']?.features||[];
+    const visible=scenario.region==='World'?all:all.filter(feature=>classifyRegion(feature)===scenario.region);visibleCache.set(state.scenario,visible);return visible;
+  }
+  function nationPopulation(name,features){
+    let total=0;for(const feature of features)if(featureOwner(feature)===name)total+=Number(feature.properties.population)||0;
+    if(total>0)return Math.round(total);
+    return 750_000+(stableHash(name)%75)*1_000_000;
+  }
+  function nationEconomy(name,features){
+    let total=0;for(const feature of features)if(featureOwner(feature)===name)total+=Number(feature.properties.gdp)||0;
+    if(total>0)return Math.max(35,Math.round(total/6000));
+    return 45+(stableHash(name)%75)*7;
+  }
+  function ensureNation(name){
+    if(!name)return null;
+    if(!state.nations[name]){
+      const features=visibleFeatures();const economy=nationEconomy(name,features);
+      state.nations[name]={economy,army:Math.max(22,Math.round(economy*.42)),population:nationPopulation(name,features),industry:0,commitment:35,treasury:state.nations[state.playerNation]?.treasury??state.gold,policy:'Neutral'};
+    }
+    return state.nations[name];
+  }
+  function selectedNation(){return ensureNation(state.playerNation);}
+  function countriesOnMap(){return [...new Set(visibleFeatures().map(featureOwner))].sort((a,b)=>a.localeCompare(b));}
+  function setPlayerNation(name,keepTreasury=false){
+    if(!countriesOnMap().includes(name))return;
+    if(state.playerNation&&state.nations[state.playerNation])state.nations[state.playerNation].treasury=state.gold;
+    state.playerNation=name;const nation=ensureNation(name);
+    if(!keepTreasury)state.gold=nation.treasury;
+    state.population=nation.population;state.power=Math.round(nation.army/8);state.armyAllocation=nation.commitment||35;
+    state.targetNation=state.targetNation===name?'':state.targetNation;
+    log(`National command transferred to ${name}.`);mapDirty=true;render();
+  }
+  function setScenario(id,resetCampaign=true){
+    if(!MAP_SCENARIOS[id])return;
+    state.scenario=id;state.speed=0;state.worldDays=0;state.targetNation='';state.mapTool='select';
+    if(resetCampaign){state.nations={};state.territoryOwners={};state.customColors={};state.puppets={};state.wars=[];state.alliances=[];state.achievements=[];}
+    const start=activeScenario().start;state.playerNation=countriesOnMap().includes(start)?start:(countriesOnMap()[0]||start);
+    const nation=ensureNation(state.playerNation);nation.treasury=state.gold;state.population=nation.population;state.power=Math.round(nation.army/8);
+    $('scenario-select').value=id;mapDirty=true;log(`${activeScenario().label} scenario selected.`);scheduleEvent();render();
+  }
+  function currentAlliance(name){
+    const pact=state.alliances.find(item=>item.includes(name)&&item.includes(state.playerNation));
+    return pact?pact.find(item=>item!==name):'';
+  }
+  function allianceLabel(name){if(state.puppets?.[name]===state.playerNation)return 'Puppet state';const ally=currentAlliance(name);return ally?`Pact · ${ally}`:(ensureNation(name)?.policy||'Neutral');}
+  function mapProjection(width,height,bounds){
+    const pad=20,worldW=Math.max(1,bounds.maxX-bounds.minX),worldH=Math.max(1,bounds.maxY-bounds.minY);
+    const scale=Math.min((width-pad*2)/worldW,(height-pad*2)/worldH);
+    const usedW=worldW*scale,usedH=worldH*scale,left=(width-usedW)/2,top=(height-usedH)/2;
+    return (lon,lat)=>[left+(lon-bounds.minX)*scale,top+(bounds.maxY-lat)*scale];
+  }
+  function mapPath(feature,project){
+    const path=new Path2D();const addRing=ring=>{if(!ring.length)return;const [sx,sy]=project(ring[0][0],ring[0][1]);path.moveTo(sx,sy);for(let i=1;i<ring.length;i++){const [x,y]=project(ring[i][0],ring[i][1]);path.lineTo(x,y);}path.closePath();};
+    if(feature.geometry.type==='Polygon')feature.geometry.coordinates.forEach(addRing);else feature.geometry.coordinates.forEach(poly=>poly.forEach(addRing));
+    return path;
+  }
+  function renderMap(){
+    const canvas=$('world-map');if(!canvas||!window.NEON_MAP_DATA)return;
+    const rect=canvas.getBoundingClientRect();if(rect.width<5||rect.height<5)return;
+    const dpr=Math.min(window.devicePixelRatio||1,2);const width=rect.width,height=rect.height;
+    if(canvas.width!==Math.round(width*dpr)||canvas.height!==Math.round(height*dpr)){canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);}
+    const ctx=canvas.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,width,height);
+    let minX=180,maxX=-180,minY=90,maxY=-90;const features=visibleFeatures();
+    features.forEach(feature=>featureCoordinates(feature.geometry,(x,y)=>{minX=Math.min(minX,x);maxX=Math.max(maxX,x);minY=Math.min(minY,y);maxY=Math.max(maxY,y);}));
+    if(minX===180){minX=-180;maxX=180;minY=-58;maxY=82;}
+    mapBounds={minX,maxX,minY,maxY};
+    const project=mapProjection(width,height,mapBounds);mapObjects=[];
+    ctx.strokeStyle='#4bd7ce16';ctx.lineWidth=1;
+    for(let lat=-60;lat<=80;lat+=20){const a=project(minX,lat),b=project(maxX,lat);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}
+    for(let lon=-160;lon<=180;lon+=40){const a=project(lon,minY),b=project(lon,maxY);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}
+    const sorted=features.slice().sort((a,b)=>a.id.localeCompare(b.id));
+    for(const feature of sorted){
+      const owner=featureOwner(feature),key=territoryKey(feature),path=mapPath(feature,project);let color=state.customColors[key]||countryColor(owner);
+      if(owner===state.playerNation&&!state.customColors[key])color='#39bfb3';
+      if(feature.id===state.playerNation)color='#39bfb3';
+      ctx.beginPath();ctx.fillStyle=color;ctx.strokeStyle='#091119';ctx.lineWidth=.65;ctx.fill(path,'evenodd');ctx.stroke(path);
+      const box=featureBounds(feature,project);const battle=state.wars.find(war=>war.b===owner&&war.active&&!war.resolved);
+      if(battle&&owner!==state.playerNation){
+        ctx.save();ctx.clip(path,'evenodd');ctx.fillStyle=countryColor(battle.a);ctx.globalAlpha=.82;ctx.fillRect(box.x,box.y,box.w*Math.min(.96,battle.progress/100),box.h);ctx.restore();
+      }
+      if(feature.id===state.playerNation||owner===state.playerNation){ctx.strokeStyle='#b1fff2';ctx.lineWidth=1.25;ctx.stroke(path);}
+      mapObjects.push({feature,path,owner,bounds:box});
+    }
+    $('map-count').textContent=`${features.length} mapped territories · ${countriesOnMap().length} playable nations`;
+    mapDirty=false;
+  }
+  function featureBounds(feature,project){
+    let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
+    featureCoordinates(feature.geometry,(lon,lat)=>{const [x,y]=project(lon,lat);minX=Math.min(minX,x);minY=Math.min(minY,y);maxX=Math.max(maxX,x);maxY=Math.max(maxY,y);});
+    return {x:minX,y:minY,w:maxX-minX,h:maxY-minY};
+  }
+  function nationDescription(name){
+    const scenario=activeScenario();
+    if(name===state.playerNation)return `${name} is under your direct command. Manage its economy, army, and foreign policy.`;
+    const ally=currentAlliance(name);if(ally)return `${name} is bound by a mutual pact with ${ally}.`;
+    const war=state.wars.find(item=>(item.a===state.playerNation&&item.b===name||item.b===state.playerNation&&item.a===name)&&!item.resolved);
+    if(war)return `${name} is at war with ${state.playerNation}. The frontline advances while the simulation runs.`;
+    return `${name} · ${scenario.date} theater. Select it to take direct command, or choose it as a diplomatic target.`;
+  }
+  function renderInspector(){
+    const name=state.playerNation;const nation=ensureNation(name);const target=$('target-select');
+    $('nation-name').textContent=name||'Select a country';$('nation-status').textContent=state.godMode?'GOD MODE':(state.territoryOwners[`${state.scenario}|${name}`]?'OCCUPIED':'INDEPENDENT');
+    $('nation-desc').textContent=nationDescription(name);
+    $('nation-economy').textContent=state.godMode?'∞':`${fmt(nation.economy+nation.industry*30)} output`;
+    $('nation-military').textContent=`${fmt(nation.army)} troops`;$('nation-pop').textContent=fmt(nation.population);
+    $('nation-alliance').textContent=allianceLabel(name);
+    $('army-allocation').value=nation.commitment||state.armyAllocation||35;$('allocation-value').textContent=`${$('army-allocation').value}%`;
+    const oldTarget=state.targetNation;
+    target.innerHTML='<option value="">Choose a target nation…</option>'+countriesOnMap().filter(item=>item!==name).map(item=>`<option value="${escapeHTML(item)}">${escapeHTML(item)}</option>`).join('');target.value=oldTarget;
+    const targetNation=oldTarget?ensureNation(oldTarget):null;const isAlly=oldTarget&&Boolean(currentAlliance(oldTarget));
+    $('invest-button').disabled=!state.godMode&&state.gold<50;$('recruit-button').disabled=!state.godMode&&(state.gold<30||state.energy<3);
+    $('alliance-button').disabled=!oldTarget||isAlly;$('alliance-button').textContent=isAlly?'Pact active':'Form alliance';
+    $('aid-button').disabled=!targetNation||(!state.godMode&&state.gold<40);$('war-button').disabled=!oldTarget||isAlly||Boolean(state.wars.find(w=>(w.a===name&&w.b===oldTarget||w.b===name&&w.a===oldTarget)&&!w.resolved));
+    $('annex-button').disabled=!oldTarget||!state.godMode;
+    const war=state.wars.find(item=>item.a===name&&item.b===oldTarget&&!item.resolved);
+    const warLine=$('war-status');warLine.hidden=!war;
+    if(war)warLine.innerHTML=`Offensive vs ${escapeHTML(war.b)} · ${Math.floor(war.progress)}%<div class="war-progress"><i style="width:${Math.min(100,war.progress)}%"></i></div>`;
+    $('god-mode-toggle').checked=state.godMode;$('god-tools').hidden=!state.godMode;
+    $('god-status').hidden=!state.godMode;
+    if(state.godMode)$('god-status').textContent=state.achievementsDisabled?'God Mode active. Achievements have been permanently disabled for this save.':'God Mode active.';
+    $('campaign-state').textContent=state.speed===0?'SIMULATION PAUSED':`SIMULATION RUNNING · ${state.speed}×`;
+    $('map-era').textContent=activeScenario().label;$('map-date').textContent=activeScenario().date+ (state.worldDays?` · Day ${Math.floor(state.worldDays)}`:'');
+    $('scenario-select').value=state.scenario;
+    document.querySelectorAll('[data-speed]').forEach(button=>button.classList.toggle('active',Number(button.dataset.speed)===state.speed));
+    $('map-tool-hint').textContent=state.godMode&&state.mapTool==='annex'?'Select a country to force-annex it':state.godMode&&state.mapTool==='paint'?'Select a country to paint it':`Commanding ${name} · click a country to select it`;
+    $('force-annex-mode').classList.toggle('active',state.mapTool==='annex');$('paint-mode').classList.toggle('active',state.mapTool==='paint');
+    renderAchievements();
+  }
+  function renderAchievements(){
+    const host=$('achievement-list');if(!host)return;
+    host.innerHTML=ACHIEVEMENT_DEFS.map(item=>{const unlocked=state.achievements.includes(item.id);return `<article class="achievement ${unlocked?'unlocked':''}"><span class="achievement-icon">${item.icon}</span><div><strong>${item.name}</strong><span>${unlocked?'Unlocked':item.desc}</span></div></article>`;}).join('');
+    $('achievement-state').textContent=`${state.achievements.length} / ${ACHIEVEMENT_DEFS.length} unlocked`;
+    $('achievement-note').textContent=state.achievementsDisabled?'Achievements disabled for this save because God Mode was enabled.':'';
+  }
+  function unlockAchievement(id){
+    if(state.achievementsDisabled||state.achievements.includes(id))return;
+    const achievement=ACHIEVEMENT_DEFS.find(item=>item.id===id);if(!achievement)return;
+    state.achievements.push(id);log(`Achievement unlocked: ${achievement.name}.`);notify(`Achievement unlocked · ${achievement.name}`);
+  }
+  function checkAchievements(){
+    if(state.achievementsDisabled)return;
+    const all=visibleFeatures();
+    if(activeScenario().region==='Asia'&&all.length&&all.every(feature=>featureOwner(feature)===state.playerNation))unlockAchievement('unify-asia');
+    if(activeScenario().date>=1939&&activeScenario().date<=1942&&state.worldDays>=30&&selectedNation().policy==='Neutral'&&!state.wars.some(war=>war.a===state.playerNation||war.b===state.playerNation))unlockAchievement('neutral-survivor');
+    if(all.length&&all.every(feature=>featureOwner(feature)===state.playerNation))unlockAchievement('world-conquest');
+  }
+  function selectMapCountry(name,feature=null){
+    if(!name)return;
+    if(state.godMode&&state.mapTool==='annex'){forceAnnex(name);return;}
+    if(state.godMode&&state.mapTool==='paint'){
+      const target=feature||mapObjects.find(item=>item.owner===name)?.feature;
+      if(target){state.customColors[territoryKey(target)]=$('paint-color').value;mapDirty=true;renderMap();notify(`${target.properties.name} painted.`);}return;
+    }
+    setPlayerNation(name);
+  }
+  function mapHit(event){
+    const canvas=$('world-map'),rect=canvas.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top,ctx=canvas.getContext('2d');
+    for(let i=mapObjects.length-1;i>=0;i--){const item=mapObjects[i],b=item.bounds;if(x>=b.x&&x<=b.x+b.w&&y>=b.y&&y<=b.y+b.h&&ctx.isPointInPath(item.path,x,y,'evenodd'))return item;}
+    return null;
+  }
+  function mapPointerMove(event){
+    const item=mapHit(event),tooltip=$('map-tooltip');
+    if(!item){tooltip.style.display='none';$('world-map').style.cursor='crosshair';return;}
+    const nation=ensureNation(item.owner),rect=$('map-stage').getBoundingClientRect();
+    tooltip.innerHTML=`<strong>${escapeHTML(item.feature.properties.name)}</strong><span>Military strength: ${fmt(nation.army)} · ${escapeHTML(allianceLabel(item.owner))}</span>`;
+    tooltip.style.display='block';tooltip.style.left=Math.max(5,Math.min(event.clientX-rect.left+12,rect.width-225))+'px';tooltip.style.top=Math.max(5,Math.min(event.clientY-rect.top+12,rect.height-55))+'px';
+    $('world-map').style.cursor=state.godMode&&state.mapTool==='paint'?'cell':'pointer';
+  }
+  function forceAnnex(name){
+    if(name===state.playerNation){notify('Choose another country to annex.');return;}
+    const features=visibleFeatures().filter(feature=>featureOwner(feature)===name);
+    if(!features.length)return;
+    const capturedPopulation=ensureNation(name).population;
+    for(const feature of features)state.territoryOwners[territoryKey(feature)]=state.playerNation;
+    state.nations[state.playerNation].population+=capturedPopulation;delete state.nations[name];
+    state.mapTool='select';mapDirty=true;log(`${name} was force-annexed by ${state.playerNation}.`);notify(`${name} annexed by force.`);checkAchievements();render();
+  }
+  function toggleGodMode(enabled){
+    if(enabled&&!state.godMode){state.godMode=true;state.achievementsDisabled=true;state.mapTool='select';saveGame(true);render();notify('God Mode Enabled - Achievements Disabled for this Session');}
+    else if(!enabled&&state.godMode){state.godMode=false;state.mapTool='select';render();notify('God Mode disabled. Achievement triggers remain disabled for this save.');}
+  }
+  function issuePeace(type){
+    const pending=state.pendingPeace;if(!pending)return;
+    const target=pending.target;const features=visibleFeatures().filter(feature=>featureOwner(feature)===target);const defeatedPopulation=ensureNation(target).population;
+    if(type==='annex'){for(const feature of features)state.territoryOwners[territoryKey(feature)]=state.playerNation;state.nations[state.playerNation].population+=defeatedPopulation;delete state.nations[target];}
+    if(type==='puppet'){state.puppets[target]=state.playerNation;state.alliances.push([state.playerNation,target]);}
+    const war=state.wars.find(item=>item.id===pending.warId);if(war)war.resolved=true;
+    state.pendingPeace=null;$('peace-dialog').close();mapDirty=true;log(`${target} accepted ${type==='annex'?'annexation':'puppet status'}.`);checkAchievements();render();saveGame(true);
+  }
+
   // Resource yields are derived from owned projects so they stay consistent after loading.
   function getRates(){
     let gold=0,research=0,population=120,power=8,territory=100;
     for(const project of projects){const count=state.buildings[project.id]||0;gold+=(project.gold||0)*count;research+=(project.research||0)*count;population+=(project.pop||0)*count;power+=(project.power||0)*count;territory+=(project.territory||0)*count;}
+    const nation=selectedNation();if(nation){gold+=nation.economy*.006+nation.industry*.4;population+=nation.population-120;power+=Math.round(nation.army/8)-8;territory+=visibleFeatures().filter(feature=>featureOwner(feature)===state.playerNation).length*25;}
     const multiplier=state.tech.quantum?2:1;
     return {gold:gold*multiplier,research:research*multiplier,population,power,territory,energy:state.buildings.solar||0};
   }
   function costFor(project){return Math.ceil(project.cost*Math.pow(project.scale,state.buildings[project.id]||0));}
-  function fmt(value){if(!Number.isFinite(value))return '0';if(value>=1e9)return (value/1e9).toFixed(2)+'B';if(value>=1e6)return (value/1e6).toFixed(2)+'M';if(value>=1e4)return (value/1e3).toFixed(1)+'k';return Math.floor(value).toLocaleString();}
+  function fmt(value){if(value===Infinity)return '∞';if(!Number.isFinite(value))return '0';if(value>=1e9)return (value/1e9).toFixed(2)+'B';if(value>=1e6)return (value/1e6).toFixed(2)+'M';if(value>=1e4)return (value/1e3).toFixed(1)+'k';return Math.floor(value).toLocaleString();}
   function fmtRate(value){return value<10?value.toFixed(1).replace(/\.0$/,''):fmt(value);}
   function ownsRequirement(project){if(!project.requires)return true;return Boolean(state.tech[project.requires.tech]);}
-  function canAfford(project){return state.gold>=costFor(project)&&state.research>=(project.researchCost||0);}
+  function canAfford(project){return state.godMode||(state.gold>=costFor(project)&&state.research>=(project.researchCost||0));}
 
   // UI rendering is centralized; game state never depends on the rendered text.
   function render(){
     const rates=getRates();
-    $('gold-value').textContent=fmt(state.gold);$('energy-value').textContent=fmt(state.energy);$('population-value').textContent=fmt(rates.population);$('power-value').textContent=fmt(rates.power);
+    $('gold-value').textContent=state.godMode?'∞':fmt(state.gold);$('energy-value').textContent=state.godMode?'∞':fmt(state.energy);$('population-value').textContent=fmt(rates.population);$('power-value').textContent=state.godMode?'∞':fmt(rates.power);
     $('gold-rate').textContent='+'+fmtRate(rates.gold);$('energy-rate').textContent='+'+fmtRate(rates.energy);$('cycle').textContent=fmt(state.cycle);
     $('territory-report').textContent=`Your settlement holds ${fmt(rates.territory)} km² of frontier.`;
     $('research-report').textContent=`${fmtRate(state.research)} points banked · +${fmtRate(rates.research)} points per second`;
@@ -136,7 +413,7 @@
     $('stability-label').textContent=stability>=65?'Stable':stability>=35?'Watch':'Critical';
     $('stability-label').style.color=stability>=65?'var(--lime)':stability>=35?'var(--amber)':'var(--red)';
     const outlook=$('outlook-report');outlook.textContent=stability>=65?'The frontier is quiet. A good time to invest.':stability>=35?'Tensions are rising. Consider shoring up civic support.':'Civic trust is fragile. An event could have serious consequences.';outlook.className=stability>=65?'green':'yellow';
-    renderProjects();renderLog();
+    renderProjects();renderLog();renderInspector();if(mapDirty)renderMap();
   }
   function renderProjects(){
     const grid=$('upgrade-grid');const visible=projects.filter(p=>currentFilter==='all'||p.category===currentFilter);
@@ -177,7 +454,7 @@
     const cost=costFor(project),researchCost=project.researchCost||0;
     if(!ownsRequirement(project)){notify('Complete the prerequisite research first.');return;}
     if(state.gold<cost||state.research<researchCost){notify('Your treasury or research reserve is too low.');return;}
-    state.gold-=cost;state.research-=researchCost;
+    if(!state.godMode){state.gold-=cost;state.research-=researchCost;}
     if(project.tech)state.tech[id]=true;
     else if(id==='click')state.clickLevel++;
     else state.buildings[id]=(state.buildings[id]||0)+1;
@@ -205,7 +482,7 @@
 
   // Saves are versioned and validated so a damaged browser entry cannot break the game.
   function saveGame(silent=false){
-    try{state.lastSaved=Date.now();localStorage.setItem(SAVE_KEY,JSON.stringify(state));$('save-status').textContent='Saved just now';if(!silent)notify('Progress saved to this browser.');return true;}
+    try{if(state.nations[state.playerNation])state.nations[state.playerNation].treasury=state.gold;state.lastSaved=Date.now();localStorage.setItem(SAVE_KEY,JSON.stringify(state));$('save-status').textContent='Saved just now';if(!silent)notify('Progress saved to this browser.');return true;}
     catch(error){$('save-status').textContent='Save unavailable';if(!silent)notify('Could not save. Browser storage may be unavailable.');return false;}
   }
   function loadGame(){
@@ -214,25 +491,52 @@
       const saved=JSON.parse(raw);
       if(!saved||typeof saved!=='object'||!Number.isFinite(saved.gold))throw new Error('Invalid save data');
       const fresh=BASE_STATE();
-      for(const key of ['gold','energy','research','population','territory','power','stability','clickLevel','cycle'])if(Number.isFinite(saved[key]))fresh[key]=Math.max(0,saved[key]);
+      for(const key of ['gold','energy','research','population','territory','power','stability','clickLevel','cycle','worldDays','speed','armyAllocation'])if(Number.isFinite(saved[key]))fresh[key]=Math.max(0,saved[key]);
+      if(typeof saved.scenario==='string'&&MAP_SCENARIOS[saved.scenario])fresh.scenario=saved.scenario;
+      if(typeof saved.playerNation==='string')fresh.playerNation=saved.playerNation;
+      if(typeof saved.targetNation==='string')fresh.targetNation=saved.targetNation;
+      for(const key of ['nations','territoryOwners','customColors','puppets'])if(saved[key]&&typeof saved[key]==='object'&&!Array.isArray(saved[key]))fresh[key]=saved[key];
+      for(const key of ['wars','alliances','achievements'])if(Array.isArray(saved[key]))fresh[key]=saved[key];
+      if(saved.pendingPeace&&typeof saved.pendingPeace.target==='string')fresh.pendingPeace=saved.pendingPeace;
+      fresh.achievementsDisabled=saved.achievementsDisabled===true;fresh.godMode=saved.godMode===true;fresh.mapTool=['annex','paint'].includes(saved.mapTool)?saved.mapTool:'select';
       if(saved.buildings&&typeof saved.buildings==='object')for(const p of projects)if(Number.isFinite(saved.buildings[p.id]))fresh.buildings[p.id]=Math.max(0,Math.floor(saved.buildings[p.id]));
       if(saved.tech&&typeof saved.tech==='object')for(const p of projects)if(p.tech)fresh.tech[p.id]=saved.tech[p.id]===true;
       fresh.log=Array.isArray(saved.log)?saved.log.filter(x=>x&&typeof x.text==='string'&&typeof x.time==='string').slice(-20):[];
       const elapsed=Math.min(OFFLINE_CAP,Math.max(0,(Date.now()-(Number(saved.lastSaved)||Date.now()))/1000));
-      const previous=state;state=fresh;
-      const rates=getRates();state.gold+=rates.gold*elapsed;state.research+=rates.research*elapsed;state.energy+=rates.energy*elapsed;state.cycle+=elapsed/60;
+      state=fresh;const playable=countriesOnMap();if(!playable.includes(state.playerNation))state.playerNation=playable.includes(activeScenario().start)?activeScenario().start:(playable[0]||activeScenario().start);if(state.targetNation&&!playable.includes(state.targetNation))state.targetNation='';
+      const rates=getRates(),offlineScale=fresh.speed||0;state.gold+=rates.gold*elapsed*offlineScale;state.research+=rates.research*elapsed*offlineScale;state.energy+=rates.energy*elapsed*offlineScale;state.cycle+=elapsed/60*offlineScale;
       if(elapsed>=5){log(`Offline production credited for ${Math.floor(elapsed/60)} minute${elapsed>=120?'s':''}.`);}
-      render();$('save-status').textContent='Save loaded';notify(elapsed>=5?'Save loaded. Offline production added.':'Save loaded.');return true;
+      mapDirty=true;render();$('save-status').textContent='Save loaded';notify(elapsed>=5&&offlineScale?'Save loaded. Offline production added.':'Save loaded.');return true;
     }catch(error){notify('The saved game could not be read. Start a new settlement or reset the save.');return false;}
   }
   function resetGame(){
     if(!window.confirm('Reset all Neon Frontier progress in this browser? This cannot be undone.'))return;
-    state=BASE_STATE();localStorage.removeItem(SAVE_KEY);lastTick=Date.now();render();scheduleEvent();$('save-status').textContent='New settlement';notify('A new settlement has been established.');
+    state=BASE_STATE();localStorage.removeItem(SAVE_KEY);lastTick=Date.now();mapDirty=true;render();scheduleEvent();$('save-status').textContent='New settlement';notify('A new settlement has been established.');
+  }
+  function presentPeace(){
+    if(!state.pendingPeace)return;
+    if($('event-dialog').open){setTimeout(presentPeace,700);return;}
+    const target=state.pendingPeace.target;$('peace-description').textContent=`${target} can be annexed into ${state.playerNation} or kept as a puppet state under your influence.`;
+    if(!$('peace-dialog').open)$('peace-dialog').showModal();
+  }
+  function runWars(step){
+    for(const war of state.wars){
+      if(!war.active||war.resolved)continue;
+      const attacker=ensureNation(war.a),defender=ensureNation(war.b);if(!attacker||!defender)continue;
+      const committed=attacker.army*(attacker.commitment||35)/100;
+      const defense=defender.army*.46+defender.economy*.16;
+      const rate=Math.max(.18,(committed+18)/(defense+30))*1.1;
+      war.progress=Math.min(100,war.progress+rate*step);
+      defender.army=Math.max(0,defender.army-rate*step*.7);
+      mapDirty=true;
+      if(war.progress>=100){war.resolved=true;state.pendingPeace={target:war.b,warId:war.id};log(`Victory on the ${war.b} front. Peace terms are ready.`);setTimeout(presentPeace,0);}
+    }
   }
   function tick(){
     const now=Date.now(),elapsed=Math.min(5,(now-lastTick)/1000);lastTick=now;
-    const rates=getRates();state.gold+=rates.gold*elapsed;state.research+=rates.research*elapsed;state.energy+=rates.energy*elapsed;state.cycle+=elapsed/60;
-    if(elapsed>0)render();
+    const step=elapsed*state.speed;
+    if(step>0){const rates=getRates(),nation=selectedNation();state.gold+=rates.gold*step;state.research+=rates.research*step;state.energy+=rates.energy*step;state.cycle+=step/60;state.worldDays+=step/5;nation.treasury=state.gold;runWars(step);checkAchievements();}
+    render();
   }
   function bindEvents(){
     $('gather-button').addEventListener('click',gather);
@@ -241,6 +545,25 @@
     $('save-button').addEventListener('click',()=>saveGame());$('load-button').addEventListener('click',loadGame);$('reset-button').addEventListener('click',resetGame);
     $('event-dismiss').addEventListener('click',()=>{if($('event-dialog').open){$('event-dialog').close();scheduleEvent();}});
     $('event-dialog').addEventListener('cancel',()=>scheduleEvent());
+    $('scenario-select').addEventListener('change',event=>setScenario(event.target.value));
+    document.querySelectorAll('[data-speed]').forEach(button=>button.addEventListener('click',()=>{state.speed=Number(button.dataset.speed);lastTick=Date.now();document.querySelectorAll('[data-speed]').forEach(item=>item.classList.toggle('active',Number(item.dataset.speed)===state.speed));render();saveGame(true);}));
+    $('world-map').addEventListener('pointermove',mapPointerMove);
+    $('world-map').addEventListener('pointerleave',()=>{$('map-tooltip').style.display='none';});
+    $('world-map').addEventListener('click',event=>{const hit=mapHit(event);if(hit)selectMapCountry(hit.owner,hit.feature);});
+    $('target-select').addEventListener('change',event=>{state.targetNation=event.target.value;renderInspector();});
+    $('army-allocation').addEventListener('input',event=>{const nation=selectedNation();nation.commitment=Number(event.target.value);state.armyAllocation=nation.commitment;$('allocation-value').textContent=`${nation.commitment}%`;});
+    $('invest-button').addEventListener('click',()=>{if(!state.godMode&&state.gold<50)return;if(!state.godMode)state.gold-=50;const nation=selectedNation();nation.economy+=30;nation.industry++;nation.treasury=state.gold;log(`${state.playerNation} invested in industry.`);mapDirty=true;render();notify('National industry expanded.');});
+    $('recruit-button').addEventListener('click',()=>{if(!state.godMode&&(state.gold<30||state.energy<3))return;if(!state.godMode){state.gold-=30;state.energy-=3;}const nation=selectedNation();nation.army+=120;nation.treasury=state.gold;state.power=Math.round(nation.army/8);log(`Recruitment completed in ${state.playerNation}.`);render();notify('Army recruited instantly.');});
+    $('alliance-button').addEventListener('click',()=>{const target=state.targetNation;if(!target||currentAlliance(target))return;state.alliances.push([state.playerNation,target]);ensureNation(target).policy='Pact';log(`A defensive pact was formed with ${target}.`);mapDirty=true;render();saveGame(true);notify(`Alliance formed with ${target}.`);});
+    $('aid-button').addEventListener('click',()=>{const target=state.targetNation;if(!target||(!state.godMode&&state.gold<40))return;if(!state.godMode)state.gold-=40;ensureNation(target).army+=80;log(`Military aid delivered to ${target}.`);render();saveGame(true);notify(`Military aid sent to ${target}.`);});
+    $('war-button').addEventListener('click',()=>{const target=state.targetNation;if(!target||currentAlliance(target)||state.wars.some(war=>!war.resolved&&war.a===state.playerNation&&war.b===target))return;state.wars.push({id:`war-${Date.now()}`,a:state.playerNation,b:target,progress:0,active:true,resolved:false});selectedNation().policy='At war';log(`War declared on ${target}.`);mapDirty=true;render();saveGame(true);notify(`War declared on ${target}.`);});
+    $('annex-button').addEventListener('click',()=>{if(state.godMode&&state.targetNation)forceAnnex(state.targetNation);});
+    $('god-mode-toggle').addEventListener('change',event=>toggleGodMode(event.target.checked));
+    $('force-annex-mode').addEventListener('click',()=>{state.mapTool=state.mapTool==='annex'?'select':'annex';renderInspector();});
+    $('paint-mode').addEventListener('click',()=>{state.mapTool=state.mapTool==='paint'?'select':'paint';renderInspector();});
+    $('annex-choice').addEventListener('click',()=>issuePeace('annex'));$('puppet-choice').addEventListener('click',()=>issuePeace('puppet'));
+    window.addEventListener('resize',()=>{mapDirty=true;renderMap();});
+    if('ResizeObserver'in window){mapResizeObserver=new ResizeObserver(()=>{mapDirty=true;renderMap();});mapResizeObserver.observe($('map-stage'));}
     document.addEventListener('keydown',event=>{if(event.code==='Space'&&!event.repeat&&!event.target.matches('button,input,textarea,select,[contenteditable="true"]')&&!$('event-dialog').open){event.preventDefault();gather();}});
     window.addEventListener('beforeunload',()=>saveGame(true));
   }
@@ -248,6 +571,7 @@
   // Initialization and timed loops.
   bindEvents();
   if(localStorage.getItem(SAVE_KEY))loadGame();else log('Outpost established. Your first orders are ready.');
+  if(state.pendingPeace)setTimeout(presentPeace,0);
   render();lastTick=Date.now();
   setInterval(tick,1000);
   setInterval(()=>saveGame(true),SAVE_INTERVAL);
