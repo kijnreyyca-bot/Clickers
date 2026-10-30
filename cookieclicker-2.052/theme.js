@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const key = "cookie_clicker_ui_theme";
+  const key = "cookie_clicker_ui_theme_v2";
   const themes = ["pure-black", "original", "night", "white"];
   const select = document.getElementById("ccThemeSelect");
   if (!select) return;
@@ -9,14 +9,14 @@
   function readTheme() {
     try {
       const saved = window.localStorage.getItem(key);
-      return themes.includes(saved) ? saved : "original";
+      return themes.includes(saved) ? saved : "night";
     } catch (error) {
-      return "original";
+      return "night";
     }
   }
 
   function applyTheme(theme, save) {
-    if (!themes.includes(theme)) theme = "original";
+    if (!themes.includes(theme)) theme = "night";
     document.body.dataset.cookieTheme = theme;
     select.value = theme;
     if (save) {
